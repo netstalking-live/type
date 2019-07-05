@@ -17,6 +17,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Заголовок", name: "title", widget: "string", tagname: "h1"}
       - {label: "Текст", name: "body", widget: "markdown"}
       - {label: "Дата публикации", name: "date", widget: "datetime"}
+      - {label: "Автор", name: "author", widget: "string"}
       - {label: "Обложка", name: "image", widget: "image", required: false}
   - name: "pages" # Used in routes, e.g., /admin/collections/:slug/edit
     label: "Страница" # Used in the UI, e.g., "New Post"

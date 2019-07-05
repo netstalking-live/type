@@ -1,20 +1,29 @@
 backend:
   name: github
-  repo: aspirethemes/type # Path to your Github repository
+  repo: netstalking-live/netstalking-live.github.io # Path to your Github repository
   branch: master # Branch to update (master by default)
+  site_domain: kind-noyce-7edf9a.netlify.com
 
 media_folder: "images" # Folder where user uploaded files should go
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, e.g., /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, e.g., "New Post"
+    label: "Пост" # Used in the UI, e.g., "New Post"
     folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Заголовок", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Текст", name: "body", widget: "markdown"}
+      - {label: "Дата публикации", name: "date", widget: "datetime"}
+      - {label: "Обложка", name: "image", widget: "image", required: false}
+  - name: "pages" # Used in routes, e.g., /admin/collections/:slug/edit
+    label: "Страница" # Used in the UI, e.g., "New Post"
+    folder: "_pages" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Заголовок", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Текст", name: "body", widget: "markdown"}
